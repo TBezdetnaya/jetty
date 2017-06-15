@@ -21,18 +21,16 @@ public class CarInsuranceResponse {
         this.description = description;
     }
 
-    CarInsuranceRequest request = new CarInsuranceRequest();
-
-
-
 
     public int getId() {
         return id;
     }
 
+
     public void setId(int id) {
         this.id = id;
     }
+
 
     public String getName() {
         return name;

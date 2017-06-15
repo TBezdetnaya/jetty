@@ -34,15 +34,14 @@ public class CarInsuranceService {
         CarInsuranceResponse response = new CarInsuranceResponse();
 
         if (request.getId()< 3){
-            response.setName("KACKO ");
+            response.setName("KACKO");
             response.setId(1);
-            response.setName("OSAGO ");
+            response.setName("OSAGO");
             response.setId(2);
             response.getDescription();
 
-
         }else{
-            response.setDescription("No insurance by such id: ");
+            response.setDescription("No insurance by such id: " + request.getId());
         }
         return response;
 

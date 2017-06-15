@@ -21,13 +21,9 @@ import java.util.logging.Logger;
 public class CarInsuransePositiveFlow {
 
     private static final String TEST_URL = "http://localhost:8080/rest";
-
     private static final Logger LOGGER = Logger.getLogger(PositiveFlow.class.getName());
-
     private ClientConfig clientConfig;
-
     private Client client;
-
     private WebTarget target;
 
     @BeforeTest
@@ -46,7 +42,7 @@ public class CarInsuransePositiveFlow {
         carInsuranceRequest.setId(4);
         WebTarget queryURL = target.path("json/post/insurance");
         CarInsuranceResponse response = queryURL.request(MediaType.APPLICATION_JSON).post(Entity.entity(carInsuranceRequest, MediaType.APPLICATION_JSON), CarInsuranceResponse.class);
-        Assert.assertEquals(response.getDescription() + " "+ response.getId(),"No insurance by such id:  0");
+        Assert.assertEquals(response.getDescription() + " "+ response.getId(),"No insurance by such id: 4 0");
 
 
     }
