@@ -1,7 +1,4 @@
 package rest_tests;
-
-import jdk.nashorn.internal.parser.JSONParser;
-import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 import org.glassfish.jersey.client.ClientConfig;
@@ -11,17 +8,13 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import rest.json.CarInsuranceRequest;
 import rest.json.CarInsuranceResponse;
-import rest.json.JSONService;
-
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 

@@ -4,7 +4,6 @@ import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -12,9 +11,8 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.logging.Logger;
-
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+
 
 /**
  * Created by Tanya on 17.06.2017.
