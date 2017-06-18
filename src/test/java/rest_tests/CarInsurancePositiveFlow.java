@@ -43,7 +43,7 @@ public class CarInsurancePositiveFlow {
     public void testCarInsuranceInJSONPost (){
         CarInsuranceRequest carInsuranceRequest = new CarInsuranceRequest();
         carInsuranceRequest.setId(4);
-        WebTarget queryURL = target.path("json/post/insurance");
+        WebTarget queryURL = target.path("carInsuranceService/post/insurance");
         CarInsuranceResponse response = queryURL.request(MediaType.APPLICATION_JSON).post(Entity.entity(carInsuranceRequest, MediaType.APPLICATION_JSON), CarInsuranceResponse.class);
         Assert.assertEquals(response.getDescription() + " "+ response.getId(),"No insurance by such id: 4");
 
@@ -53,8 +53,9 @@ public class CarInsurancePositiveFlow {
     public void testCarInsuranceInJSONPost1(){
         CarInsuranceRequest carInsuranceRequest = new CarInsuranceRequest();
         carInsuranceRequest.setId(1);
-        WebTarget queryURL = target.path("json/post/insurance");
+        WebTarget queryURL = target.path("carInsuranceService/post/insurance");
         CarInsuranceResponse response = queryURL.request(MediaType.APPLICATION_JSON).post(Entity.entity(carInsuranceRequest, MediaType.APPLICATION_JSON), CarInsuranceResponse.class);
+        System.out.println(response.getDescription() + " "+ response.getId() + " " + response.getName());
         Assert.assertEquals(response.getDescription() + " "+ response.getId() + " " + response.getName(),"You bought the insurance 1 OSAGO");
 
 
@@ -63,7 +64,7 @@ public class CarInsurancePositiveFlow {
     public void testCarInsuranceInJSONPost3(){
         CarInsuranceRequest carInsuranceRequest = new CarInsuranceRequest();
         carInsuranceRequest.setId(2);
-        WebTarget queryURL = target.path("json/post/insurance");
+        WebTarget queryURL = target.path("carInsuranceService/post/insurance");
         CarInsuranceResponse response = queryURL.request(MediaType.APPLICATION_JSON).post(Entity.entity(carInsuranceRequest, MediaType.APPLICATION_JSON), CarInsuranceResponse.class);
         System.out.println(response.getDescription() + " "+ response.getId() + " " + response.getName());
         Assert.assertEquals(response.getDescription() + " "+ response.getId() + " " + response.getName(),"You bought the insurance 2 Unknown company");
@@ -73,7 +74,7 @@ public class CarInsurancePositiveFlow {
     @Test
     public void testCarInsuranceInJSONGet() throws IOException {
 
-        WebTarget queryURL = target.path("json/get/insurance");
+        WebTarget queryURL = target.path("carInsuranceService/get/insurance");
         Invocation.Builder invokeBuilder = queryURL.request(MediaType.APPLICATION_JSON);
         Response response = invokeBuilder.get();
         assertEquals(response.getStatus(), 200);
